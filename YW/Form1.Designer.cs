@@ -37,8 +37,13 @@
             this.btaddfiles = new System.Windows.Forms.Button();
             this.btdeltab = new System.Windows.Forms.Button();
             this.bttabadd = new System.Windows.Forms.Button();
+            this.cbdrives = new System.Windows.Forms.ComboBox();
+            this.ldrives = new System.Windows.Forms.Label();
+            this.btwritecd = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -58,6 +63,10 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.progressBar1);
             this.splitContainer1.Size = new System.Drawing.Size(401, 387);
             this.splitContainer1.SplitterDistance = 342;
             this.splitContainer1.TabIndex = 0;
@@ -74,6 +83,9 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.btwritecd);
+            this.splitContainer2.Panel2.Controls.Add(this.ldrives);
+            this.splitContainer2.Panel2.Controls.Add(this.cbdrives);
             this.splitContainer2.Panel2.Controls.Add(this.btdelfiles);
             this.splitContainer2.Panel2.Controls.Add(this.btaddfiles);
             this.splitContainer2.Panel2.Controls.Add(this.btdeltab);
@@ -115,6 +127,8 @@
             // 
             // btdelfiles
             // 
+            this.btdelfiles.FlatAppearance.BorderSize = 0;
+            this.btdelfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btdelfiles.Location = new System.Drawing.Point(49, 51);
             this.btdelfiles.Name = "btdelfiles";
             this.btdelfiles.Size = new System.Drawing.Size(40, 20);
@@ -125,6 +139,8 @@
             // 
             // btaddfiles
             // 
+            this.btaddfiles.FlatAppearance.BorderSize = 0;
+            this.btaddfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btaddfiles.Location = new System.Drawing.Point(3, 51);
             this.btaddfiles.Name = "btaddfiles";
             this.btaddfiles.Size = new System.Drawing.Size(40, 20);
@@ -135,6 +151,8 @@
             // 
             // btdeltab
             // 
+            this.btdeltab.FlatAppearance.BorderSize = 0;
+            this.btdeltab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btdeltab.Location = new System.Drawing.Point(49, 3);
             this.btdeltab.Name = "btdeltab";
             this.btdeltab.Size = new System.Drawing.Size(40, 20);
@@ -144,12 +162,51 @@
             // 
             // bttabadd
             // 
+            this.bttabadd.FlatAppearance.BorderSize = 0;
+            this.bttabadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bttabadd.Location = new System.Drawing.Point(3, 3);
             this.bttabadd.Name = "bttabadd";
             this.bttabadd.Size = new System.Drawing.Size(40, 20);
             this.bttabadd.TabIndex = 0;
             this.bttabadd.Text = "add";
             this.bttabadd.UseVisualStyleBackColor = true;
+            // 
+            // cbdrives
+            // 
+            this.cbdrives.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbdrives.FormattingEnabled = true;
+            this.cbdrives.Location = new System.Drawing.Point(58, 217);
+            this.cbdrives.Name = "cbdrives";
+            this.cbdrives.Size = new System.Drawing.Size(54, 21);
+            this.cbdrives.TabIndex = 4;
+            // 
+            // ldrives
+            // 
+            this.ldrives.AutoSize = true;
+            this.ldrives.Location = new System.Drawing.Point(11, 222);
+            this.ldrives.Name = "ldrives";
+            this.ldrives.Size = new System.Drawing.Size(37, 13);
+            this.ldrives.TabIndex = 5;
+            this.ldrives.Text = "Drives";
+            // 
+            // btwritecd
+            // 
+            this.btwritecd.FlatAppearance.BorderSize = 0;
+            this.btwritecd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btwritecd.Location = new System.Drawing.Point(80, 315);
+            this.btwritecd.Name = "btwritecd";
+            this.btwritecd.Size = new System.Drawing.Size(40, 20);
+            this.btwritecd.TabIndex = 6;
+            this.btwritecd.Text = "write";
+            this.btwritecd.UseVisualStyleBackColor = true;
+            this.btwritecd.Click += new System.EventHandler(this.btwritecd_Click);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(7, 6);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(265, 29);
+            this.progressBar1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -160,10 +217,12 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
@@ -183,6 +242,10 @@
         private System.Windows.Forms.Button btaddfiles;
         private System.Windows.Forms.Button btdeltab;
         private System.Windows.Forms.Button bttabadd;
+        private System.Windows.Forms.Label ldrives;
+        private System.Windows.Forms.ComboBox cbdrives;
+        private System.Windows.Forms.Button btwritecd;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

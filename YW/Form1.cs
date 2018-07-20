@@ -16,7 +16,21 @@ namespace YW
         public Form1()
         {
             InitializeComponent();
+            GetDrives();
         }
+
+        private void GetDrives()
+        {
+            string[] Drives = Environment.GetLogicalDrives();
+            foreach (string s in Drives)
+            {
+                cbdrives.Items.Add(s);
+
+            }
+        }
+
+
+        List<string> cdsongs = new List<string>();
 
         private void btaddfiles_Click(object sender, EventArgs e)
         {
@@ -38,6 +52,7 @@ namespace YW
                             using (myStream)
                             {
                                 songslistbox.Items.Add(Path.GetFileName(file));
+                                cdsongs.Add(file);
                             }
                         }
                     }
@@ -58,10 +73,24 @@ namespace YW
             if (songslistbox.SelectedIndex != -1)
             {
                 for (int i = selectedItems.Count - 1; i >= 0; i--)
+                {
                     songslistbox.Items.Remove(selectedItems[i]);
+                    cdsongs.RemoveAt(i);
+                }
             }
             else
                 MessageBox.Show("something wrong");
+        }
+
+        private void btwritecd_Click(object sender, EventArgs e)
+        {
+            string directorytocreate = cbdrives.SelectedItem.ToString() + tabControl.SelectedTab.Text;
+            Directory.CreateDirectory(directorytocreate);
+            for (int i = 0; i < cdsongs.Count; i++)
+            {
+                string pathtowrite = directorytocreate + "\\" + songslistbox.Items[i].ToString();
+                File.Copy(cdsongs[i], pathtowrite);
+            }
         }
     }
 }
