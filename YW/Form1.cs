@@ -49,5 +49,19 @@ namespace YW
                 }
             }
         }
+
+        private void btdelfiles_Click(object sender, EventArgs e)
+        {
+            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(songslistbox);
+            selectedItems = songslistbox.SelectedItems;
+
+            if (songslistbox.SelectedIndex != -1)
+            {
+                for (int i = selectedItems.Count - 1; i >= 0; i--)
+                    songslistbox.Items.Remove(selectedItems[i]);
+            }
+            else
+                MessageBox.Show("something wrong");
+        }
     }
 }

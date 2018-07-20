@@ -109,6 +109,7 @@
             this.songslistbox.FormattingEnabled = true;
             this.songslistbox.Location = new System.Drawing.Point(3, 3);
             this.songslistbox.Name = "songslistbox";
+            this.songslistbox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.songslistbox.Size = new System.Drawing.Size(260, 310);
             this.songslistbox.TabIndex = 0;
             // 
@@ -120,6 +121,7 @@
             this.btdelfiles.TabIndex = 3;
             this.btdelfiles.Text = "del";
             this.btdelfiles.UseVisualStyleBackColor = true;
+            this.btdelfiles.Click += new System.EventHandler(this.btdelfiles_Click);
             // 
             // btaddfiles
             // 
