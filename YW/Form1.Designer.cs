@@ -33,10 +33,10 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.CDPage = new System.Windows.Forms.TabPage();
             this.songslistbox = new System.Windows.Forms.ListBox();
-            this.bttabadd = new System.Windows.Forms.Button();
-            this.btdeltab = new System.Windows.Forms.Button();
-            this.btaddfiles = new System.Windows.Forms.Button();
             this.btdelfiles = new System.Windows.Forms.Button();
+            this.btaddfiles = new System.Windows.Forms.Button();
+            this.btdeltab = new System.Windows.Forms.Button();
+            this.bttabadd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(401, 387);
-            this.splitContainer1.SplitterDistance = 343;
+            this.splitContainer1.SplitterDistance = 342;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -78,7 +78,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.btaddfiles);
             this.splitContainer2.Panel2.Controls.Add(this.btdeltab);
             this.splitContainer2.Panel2.Controls.Add(this.bttabadd);
-            this.splitContainer2.Size = new System.Drawing.Size(401, 343);
+            this.splitContainer2.Size = new System.Drawing.Size(401, 342);
             this.splitContainer2.SplitterDistance = 274;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -89,7 +89,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(274, 343);
+            this.tabControl.Size = new System.Drawing.Size(274, 342);
             this.tabControl.TabIndex = 0;
             // 
             // CDPage
@@ -98,7 +98,7 @@
             this.CDPage.Location = new System.Drawing.Point(4, 22);
             this.CDPage.Name = "CDPage";
             this.CDPage.Padding = new System.Windows.Forms.Padding(3);
-            this.CDPage.Size = new System.Drawing.Size(266, 317);
+            this.CDPage.Size = new System.Drawing.Size(266, 316);
             this.CDPage.TabIndex = 0;
             this.CDPage.Text = "CD00";
             this.CDPage.UseVisualStyleBackColor = true;
@@ -109,17 +109,27 @@
             this.songslistbox.FormattingEnabled = true;
             this.songslistbox.Location = new System.Drawing.Point(3, 3);
             this.songslistbox.Name = "songslistbox";
-            this.songslistbox.Size = new System.Drawing.Size(260, 311);
+            this.songslistbox.Size = new System.Drawing.Size(260, 310);
             this.songslistbox.TabIndex = 0;
             // 
-            // bttabadd
+            // btdelfiles
             // 
-            this.bttabadd.Location = new System.Drawing.Point(3, 3);
-            this.bttabadd.Name = "bttabadd";
-            this.bttabadd.Size = new System.Drawing.Size(40, 20);
-            this.bttabadd.TabIndex = 0;
-            this.bttabadd.Text = "add";
-            this.bttabadd.UseVisualStyleBackColor = true;
+            this.btdelfiles.Location = new System.Drawing.Point(49, 51);
+            this.btdelfiles.Name = "btdelfiles";
+            this.btdelfiles.Size = new System.Drawing.Size(40, 20);
+            this.btdelfiles.TabIndex = 3;
+            this.btdelfiles.Text = "del";
+            this.btdelfiles.UseVisualStyleBackColor = true;
+            // 
+            // btaddfiles
+            // 
+            this.btaddfiles.Location = new System.Drawing.Point(3, 51);
+            this.btaddfiles.Name = "btaddfiles";
+            this.btaddfiles.Size = new System.Drawing.Size(40, 20);
+            this.btaddfiles.TabIndex = 2;
+            this.btaddfiles.Text = "add";
+            this.btaddfiles.UseVisualStyleBackColor = true;
+            this.btaddfiles.Click += new System.EventHandler(this.btaddfiles_Click);
             // 
             // btdeltab
             // 
@@ -130,23 +140,14 @@
             this.btdeltab.Text = "del";
             this.btdeltab.UseVisualStyleBackColor = true;
             // 
-            // btaddfiles
+            // bttabadd
             // 
-            this.btaddfiles.Location = new System.Drawing.Point(3, 51);
-            this.btaddfiles.Name = "btaddfiles";
-            this.btaddfiles.Size = new System.Drawing.Size(40, 20);
-            this.btaddfiles.TabIndex = 2;
-            this.btaddfiles.Text = "add";
-            this.btaddfiles.UseVisualStyleBackColor = true;
-            // 
-            // btdelfiles
-            // 
-            this.btdelfiles.Location = new System.Drawing.Point(49, 51);
-            this.btdelfiles.Name = "btdelfiles";
-            this.btdelfiles.Size = new System.Drawing.Size(40, 20);
-            this.btdelfiles.TabIndex = 3;
-            this.btdelfiles.Text = "del";
-            this.btdelfiles.UseVisualStyleBackColor = true;
+            this.bttabadd.Location = new System.Drawing.Point(3, 3);
+            this.bttabadd.Name = "bttabadd";
+            this.bttabadd.Size = new System.Drawing.Size(40, 20);
+            this.bttabadd.TabIndex = 0;
+            this.bttabadd.Text = "add";
+            this.bttabadd.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
