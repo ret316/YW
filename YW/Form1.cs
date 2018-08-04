@@ -113,5 +113,28 @@ namespace YW
             }
             progressBar1.Value = 1;
         }
+
+        int cdcount = 1;
+        private void bttabadd_Click(object sender, EventArgs e)
+        {
+            
+            TabPage tabPage;
+            if (cdcount <10)
+                tabPage = new TabPage("CD0" + cdcount);
+            else
+                tabPage = new TabPage("CD" + cdcount);
+            ListBox lb = new ListBox();
+            lb.BorderStyle = BorderStyle.None;
+            lb.Name = "songslistbox" + (cdcount + 1);
+            lb.Dock = DockStyle.Fill;
+            lb.MultiColumn = false;
+            lb.SelectionMode = SelectionMode.MultiExtended;
+            lb.Items.Add("hoho");
+            tabPage.Controls.Add(lb);
+            tabControl.TabPages.Add(tabPage);
+
+
+            cdcount++;
+        }
     }
 }

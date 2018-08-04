@@ -31,17 +31,17 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.CDPage = new System.Windows.Forms.TabPage();
+            this.CDPage0 = new System.Windows.Forms.TabPage();
             this.songslistbox = new System.Windows.Forms.ListBox();
+            this.btwritecd = new System.Windows.Forms.Button();
+            this.ldrives = new System.Windows.Forms.Label();
+            this.cbdrives = new System.Windows.Forms.ComboBox();
             this.btdelfiles = new System.Windows.Forms.Button();
             this.btaddfiles = new System.Windows.Forms.Button();
             this.btdeltab = new System.Windows.Forms.Button();
             this.bttabadd = new System.Windows.Forms.Button();
-            this.cbdrives = new System.Windows.Forms.ComboBox();
-            this.ldrives = new System.Windows.Forms.Label();
-            this.btwritecd = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -51,7 +51,7 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tabControl.SuspendLayout();
-            this.CDPage.SuspendLayout();
+            this.CDPage0.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -98,7 +98,7 @@
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.CDPage);
+            this.tabControl.Controls.Add(this.CDPage0);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
@@ -106,26 +106,58 @@
             this.tabControl.Size = new System.Drawing.Size(274, 360);
             this.tabControl.TabIndex = 0;
             // 
-            // CDPage
+            // CDPage0
             // 
-            this.CDPage.Controls.Add(this.songslistbox);
-            this.CDPage.Location = new System.Drawing.Point(4, 22);
-            this.CDPage.Name = "CDPage";
-            this.CDPage.Padding = new System.Windows.Forms.Padding(3);
-            this.CDPage.Size = new System.Drawing.Size(266, 334);
-            this.CDPage.TabIndex = 0;
-            this.CDPage.Text = "CD00";
-            this.CDPage.UseVisualStyleBackColor = true;
+            this.CDPage0.Controls.Add(this.songslistbox);
+            this.CDPage0.Location = new System.Drawing.Point(4, 22);
+            this.CDPage0.Name = "CDPage0";
+            this.CDPage0.Padding = new System.Windows.Forms.Padding(3);
+            this.CDPage0.Size = new System.Drawing.Size(266, 334);
+            this.CDPage0.TabIndex = 0;
+            this.CDPage0.Text = "CD00";
+            this.CDPage0.UseVisualStyleBackColor = true;
             // 
             // songslistbox
             // 
+            this.songslistbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.songslistbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.songslistbox.FormattingEnabled = true;
             this.songslistbox.Location = new System.Drawing.Point(3, 3);
+            this.songslistbox.Margin = new System.Windows.Forms.Padding(0);
             this.songslistbox.Name = "songslistbox";
             this.songslistbox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.songslistbox.Size = new System.Drawing.Size(260, 328);
             this.songslistbox.TabIndex = 0;
+            // 
+            // btwritecd
+            // 
+            this.btwritecd.FlatAppearance.BorderSize = 0;
+            this.btwritecd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btwritecd.Location = new System.Drawing.Point(80, 315);
+            this.btwritecd.Name = "btwritecd";
+            this.btwritecd.Size = new System.Drawing.Size(40, 20);
+            this.btwritecd.TabIndex = 6;
+            this.btwritecd.Text = "write";
+            this.btwritecd.UseVisualStyleBackColor = true;
+            this.btwritecd.Click += new System.EventHandler(this.btwritecd_Click);
+            // 
+            // ldrives
+            // 
+            this.ldrives.AutoSize = true;
+            this.ldrives.Location = new System.Drawing.Point(11, 222);
+            this.ldrives.Name = "ldrives";
+            this.ldrives.Size = new System.Drawing.Size(37, 13);
+            this.ldrives.TabIndex = 5;
+            this.ldrives.Text = "Drives";
+            // 
+            // cbdrives
+            // 
+            this.cbdrives.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbdrives.FormattingEnabled = true;
+            this.cbdrives.Location = new System.Drawing.Point(58, 217);
+            this.cbdrives.Name = "cbdrives";
+            this.cbdrives.Size = new System.Drawing.Size(54, 21);
+            this.cbdrives.TabIndex = 4;
             // 
             // btdelfiles
             // 
@@ -172,43 +204,7 @@
             this.bttabadd.TabIndex = 0;
             this.bttabadd.Text = "add";
             this.bttabadd.UseVisualStyleBackColor = true;
-            // 
-            // cbdrives
-            // 
-            this.cbdrives.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbdrives.FormattingEnabled = true;
-            this.cbdrives.Location = new System.Drawing.Point(58, 217);
-            this.cbdrives.Name = "cbdrives";
-            this.cbdrives.Size = new System.Drawing.Size(54, 21);
-            this.cbdrives.TabIndex = 4;
-            // 
-            // ldrives
-            // 
-            this.ldrives.AutoSize = true;
-            this.ldrives.Location = new System.Drawing.Point(11, 222);
-            this.ldrives.Name = "ldrives";
-            this.ldrives.Size = new System.Drawing.Size(37, 13);
-            this.ldrives.TabIndex = 5;
-            this.ldrives.Text = "Drives";
-            // 
-            // btwritecd
-            // 
-            this.btwritecd.FlatAppearance.BorderSize = 0;
-            this.btwritecd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btwritecd.Location = new System.Drawing.Point(80, 315);
-            this.btwritecd.Name = "btwritecd";
-            this.btwritecd.Size = new System.Drawing.Size(40, 20);
-            this.btwritecd.TabIndex = 6;
-            this.btwritecd.Text = "write";
-            this.btwritecd.UseVisualStyleBackColor = true;
-            this.btwritecd.Click += new System.EventHandler(this.btwritecd_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(7, 6);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(265, 29);
-            this.progressBar1.TabIndex = 0;
+            this.bttabadd.Click += new System.EventHandler(this.bttabadd_Click);
             // 
             // progressBar2
             // 
@@ -216,6 +212,13 @@
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(265, 29);
             this.progressBar2.TabIndex = 1;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(7, 6);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(265, 29);
+            this.progressBar1.TabIndex = 0;
             // 
             // Form1
             // 
@@ -235,7 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
-            this.CDPage.ResumeLayout(false);
+            this.CDPage0.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -245,7 +248,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage CDPage;
+        private System.Windows.Forms.TabPage CDPage0;
         private System.Windows.Forms.ListBox songslistbox;
         private System.Windows.Forms.Button btdelfiles;
         private System.Windows.Forms.Button btaddfiles;
