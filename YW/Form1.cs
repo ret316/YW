@@ -117,12 +117,19 @@ namespace YW
         int cdcount = 1;
         private void bttabadd_Click(object sender, EventArgs e)
         {
-            
+
             TabPage tabPage;
-            if (cdcount <10)
+            if (cdcount < 10)
+            {
                 tabPage = new TabPage("CD0" + cdcount);
+                tabPage.Name = "CDPage0" + cdcount;
+            }
             else
+            {
                 tabPage = new TabPage("CD" + cdcount);
+                tabPage.Name = "CDPage" + cdcount;
+            }
+                
             ListBox lb = new ListBox();
             lb.BorderStyle = BorderStyle.None;
             lb.Name = "songslistbox" + (cdcount + 1);
@@ -132,8 +139,7 @@ namespace YW
             lb.Items.Add("hoho");
             tabPage.Controls.Add(lb);
             tabControl.TabPages.Add(tabPage);
-
-
+            
             cdcount++;
         }
     }
