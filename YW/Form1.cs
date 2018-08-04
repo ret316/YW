@@ -86,11 +86,32 @@ namespace YW
         {
             string directorytocreate = cbdrives.SelectedItem.ToString() + tabControl.SelectedTab.Text;
             Directory.CreateDirectory(directorytocreate);
-            for (int i = 0; i < cdsongs.Count; i++)
+            //for (int i = 0; i < cdsongs.Count; i++)
+            //{
+            //    string pathtowrite = directorytocreate + "\\" + songslistbox.Items[i].ToString();
+            //    File.Copy(cdsongs[i], pathtowrite);
+            //}
+
+            progressBar1.Visible = true;
+            progressBar1.Minimum = 1;
+            progressBar1.Maximum = cdsongs.Count;
+            progressBar1.Value = 1;
+            progressBar1.Step = 1;
+
+            for (int i = 1; i < cdsongs.Count; i++)
             {
-                string pathtowrite = directorytocreate + "\\" + songslistbox.Items[i].ToString();
-                File.Copy(cdsongs[i], pathtowrite);
+                try
+                {
+                    string pathtowrite = directorytocreate + "\\" + songslistbox.Items[i].ToString();
+                    File.Copy(cdsongs[i], pathtowrite);
+                    progressBar1.PerformStep();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not write file on disk. Original error: " + ex.Message);
+                }
             }
+            progressBar1.Value = 1;
         }
     }
 }

@@ -41,6 +41,7 @@
             this.ldrives = new System.Windows.Forms.Label();
             this.btwritecd = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -66,9 +67,10 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.progressBar2);
             this.splitContainer1.Panel2.Controls.Add(this.progressBar1);
-            this.splitContainer1.Size = new System.Drawing.Size(401, 387);
-            this.splitContainer1.SplitterDistance = 342;
+            this.splitContainer1.Size = new System.Drawing.Size(401, 459);
+            this.splitContainer1.SplitterDistance = 360;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -90,7 +92,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.btaddfiles);
             this.splitContainer2.Panel2.Controls.Add(this.btdeltab);
             this.splitContainer2.Panel2.Controls.Add(this.bttabadd);
-            this.splitContainer2.Size = new System.Drawing.Size(401, 342);
+            this.splitContainer2.Size = new System.Drawing.Size(401, 360);
             this.splitContainer2.SplitterDistance = 274;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -101,7 +103,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(274, 342);
+            this.tabControl.Size = new System.Drawing.Size(274, 360);
             this.tabControl.TabIndex = 0;
             // 
             // CDPage
@@ -110,7 +112,7 @@
             this.CDPage.Location = new System.Drawing.Point(4, 22);
             this.CDPage.Name = "CDPage";
             this.CDPage.Padding = new System.Windows.Forms.Padding(3);
-            this.CDPage.Size = new System.Drawing.Size(266, 316);
+            this.CDPage.Size = new System.Drawing.Size(266, 334);
             this.CDPage.TabIndex = 0;
             this.CDPage.Text = "CD00";
             this.CDPage.UseVisualStyleBackColor = true;
@@ -122,7 +124,7 @@
             this.songslistbox.Location = new System.Drawing.Point(3, 3);
             this.songslistbox.Name = "songslistbox";
             this.songslistbox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.songslistbox.Size = new System.Drawing.Size(260, 310);
+            this.songslistbox.Size = new System.Drawing.Size(260, 328);
             this.songslistbox.TabIndex = 0;
             // 
             // btdelfiles
@@ -208,11 +210,18 @@
             this.progressBar1.Size = new System.Drawing.Size(265, 29);
             this.progressBar1.TabIndex = 0;
             // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(7, 41);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(265, 29);
+            this.progressBar2.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 387);
+            this.ClientSize = new System.Drawing.Size(401, 459);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -246,6 +255,7 @@
         private System.Windows.Forms.ComboBox cbdrives;
         private System.Windows.Forms.Button btwritecd;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar2;
     }
 }
 
