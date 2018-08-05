@@ -28,12 +28,16 @@ namespace YW
 
             }
         }
-
-
+        TabPage tabPage;
+        ListBox lb;
+        ListBox selectedlb;
         List<string> cdsongs = new List<string>();
 
         private void btaddfiles_Click(object sender, EventArgs e)
         {
+
+            selectedlb = (ListBox)tabControl.SelectedTab.Controls.Cast<Control>().FirstOrDefault(x => x is ListBox);
+
             OpenFileDialog op = new OpenFileDialog();
             op.Filter = "add songs (*.mp3)|*.mp3";
             op.InitialDirectory = "E:\\Media\\car\\all";
@@ -51,7 +55,7 @@ namespace YW
                         {
                             using (myStream)
                             {
-                                songslistbox.Items.Add(Path.GetFileName(file));
+                                selectedlb.Items.Add(Path.GetFileName(file));
                                 cdsongs.Add(file);
                             }
                         }
@@ -67,14 +71,16 @@ namespace YW
 
         private void btdelfiles_Click(object sender, EventArgs e)
         {
-            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(songslistbox);
-            selectedItems = songslistbox.SelectedItems;
+            selectedlb = (ListBox)tabControl.SelectedTab.Controls.Cast<Control>().FirstOrDefault(x => x is ListBox);
 
-            if (songslistbox.SelectedIndex != -1)
+            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(selectedlb);
+            selectedItems = selectedlb.SelectedItems;
+
+            if (selectedlb.SelectedIndex != -1)
             {
                 for (int i = selectedItems.Count - 1; i >= 0; i--)
                 {
-                    songslistbox.Items.Remove(selectedItems[i]);
+                    selectedlb.Items.Remove(selectedItems[i]);
                     cdsongs.RemoveAt(i);
                 }
             }
@@ -118,7 +124,7 @@ namespace YW
         private void bttabadd_Click(object sender, EventArgs e)
         {
 
-            TabPage tabPage;
+            
             if (cdcount < 10)
             {
                 tabPage = new TabPage("CD0" + cdcount);
@@ -130,13 +136,13 @@ namespace YW
                 tabPage.Name = "CDPage" + cdcount;
             }
                 
-            ListBox lb = new ListBox();
+            lb = new ListBox();
             lb.BorderStyle = BorderStyle.None;
             lb.Name = "songslistbox" + (cdcount + 1);
             lb.Dock = DockStyle.Fill;
             lb.MultiColumn = false;
             lb.SelectionMode = SelectionMode.MultiExtended;
-            lb.Items.Add("hoho");
+            //lb.Items.Add("hoho");
             tabPage.Controls.Add(lb);
             tabControl.TabPages.Add(tabPage);
             
