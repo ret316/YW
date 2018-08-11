@@ -38,15 +38,10 @@ namespace YW
         //test
         //public class SongFullPathListList : List<SongFullPathList> { }
 
-        public class SongFullPathListList
-        {
-            public List<SongFullPathList> Sfpll = new List<SongFullPathList>();
-        }
-
         //public class SongFullPathList : List<SongFullPath>{ }
         public class SongFullPathList
         {
-            public string cdname { get; set; }
+            public List<string> Cdname = new List<string>();
             public List<SongFullPath> Sfplist = new List<SongFullPath>();
         }
         public class SongFullPath
@@ -59,25 +54,21 @@ namespace YW
         {
             SongFullPath sfp1 = new SongFullPath();
             SongFullPathList sfpl1 = new SongFullPathList();
-            SongFullPathListList sfpll1 = new SongFullPathListList();
             sfp1.Fullpath.Add("E\\olala\\lala1");
             sfp1.Fullpath.Add("E\\olala\\lala2");
             sfp1.Fullpath.Add("E\\olala\\lala3");
 
 
-            sfpl1.cdname = "cd01";
+            sfpl1.Cdname.Add("cd01");
             sfpl1.Sfplist.Add(sfp1);
-            sfpll1.Sfpll.Add(sfpl1);
 
             sfp1 = new SongFullPath();
             sfp1.Fullpath.Add("E\\olala\\lala4");
             sfp1.Fullpath.Add("E\\olala\\lala5");
             sfp1.Fullpath.Add("E\\olala\\lala6");
 
-            sfpl1 = new SongFullPathList();
-            sfpl1.cdname = "cd02";
+            sfpl1.Cdname.Add("cd02");
             sfpl1.Sfplist.Add(sfp1);
-            sfpll1.Sfpll.Add(sfpl1);
         }
 
 
