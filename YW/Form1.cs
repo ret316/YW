@@ -17,7 +17,6 @@ namespace YW
         {
             InitializeComponent();
             GetDrives();
-            wtf();
         }
 
         private void GetDrives()
@@ -33,53 +32,13 @@ namespace YW
         ListBox lb;
         ListBox selectedlb;
         List<string> cdsongs = new List<string>();
-
-
-        //test
-        //public class SongFullPathListList : List<SongFullPathList> { }
-
-        public class SongFullPathListList
-        {
-            public List<SongFullPathList> Sfpll = new List<SongFullPathList>();
-        }
-
-        //public class SongFullPathList : List<SongFullPath>{ }
-        public class SongFullPathList
-        {
-            public string cdname { get; set; }
-            public List<SongFullPath> Sfplist = new List<SongFullPath>();
-        }
+        
         public class SongFullPath
         {
+            public List<string> cdname = new List<string>();
             public List<string> Fullpath = new List<string>();
         }
-        //test
-
-        private void wtf()
-        {
-            SongFullPath sfp1 = new SongFullPath();
-            SongFullPathList sfpl1 = new SongFullPathList();
-            SongFullPathListList sfpll1 = new SongFullPathListList();
-            sfp1.Fullpath.Add("E\\olala\\lala1");
-            sfp1.Fullpath.Add("E\\olala\\lala2");
-            sfp1.Fullpath.Add("E\\olala\\lala3");
-
-
-            sfpl1.cdname = "cd01";
-            sfpl1.Sfplist.Add(sfp1);
-            sfpll1.Sfpll.Add(sfpl1);
-
-            sfp1 = new SongFullPath();
-            sfp1.Fullpath.Add("E\\olala\\lala4");
-            sfp1.Fullpath.Add("E\\olala\\lala5");
-            sfp1.Fullpath.Add("E\\olala\\lala6");
-
-            sfpl1 = new SongFullPathList();
-            sfpl1.cdname = "cd02";
-            sfpl1.Sfplist.Add(sfp1);
-            sfpll1.Sfpll.Add(sfpl1);
-        }
-
+        SongFullPath sfp1 = new SongFullPath();
 
         private void btaddfiles_Click(object sender, EventArgs e)
         {
@@ -103,7 +62,9 @@ namespace YW
                             using (myStream)
                             {
                                 selectedlb.Items.Add(Path.GetFileName(file));
-                                cdsongs.Add(file);
+                                //cdsongs.Add(file);
+                                sfp1.cdname.Add(tabControl.SelectedTab.Text);
+                                sfp1.Fullpath.Add(file);
                             }
                         }
                     }
@@ -127,7 +88,9 @@ namespace YW
                 for (int i = selectedItems.Count - 1; i >= 0; i--)
                 {
                     selectedlb.Items.Remove(selectedItems[i]);
-                    cdsongs.RemoveAt(i);
+                    //cdsongs.RemoveAt(i);
+                    sfp1.cdname.RemoveAt(i);
+                    sfp1.Fullpath.RemoveAt(i);
                 }
             }
             else
