@@ -99,8 +99,15 @@ namespace YW
 
         private void btwritecd_Click(object sender, EventArgs e)
         {
-            string directorytocreate = cbdrives.SelectedItem.ToString() + tabControl.SelectedTab.Text;
-            Directory.CreateDirectory(directorytocreate);
+            List<string> dirstocreate = new List<string>();
+            for (int i = 0; i < tabControl.TabCount; i++)
+            {
+                dirstocreate.Add(tabControl.TabPages[i].Text);
+                Directory.CreateDirectory(cbdrives.SelectedItem.ToString() + tabControl.TabPages[i].Text);
+            }
+
+            //string directorytocreate = cbdrives.SelectedItem.ToString() + tabControl.SelectedTab.Text;
+            //Directory.CreateDirectory(directorytocreate);
             //for (int i = 0; i < cdsongs.Count; i++)
             //{
             //    string pathtowrite = directorytocreate + "\\" + songslistbox.Items[i].ToString();
@@ -109,21 +116,28 @@ namespace YW
 
             progressBar1.Visible = true;
             progressBar1.Minimum = 1;
-            progressBar1.Maximum = cdsongs.Count;
+            progressBar1.Maximum = sfp1.Fullpath.Count;
             progressBar1.Value = 1;
             progressBar1.Step = 1;
-
-            for (int i = 1; i < cdsongs.Count; i++)
+            string pathtowrite;
+            //for (int i = 1; i < cdsongs.Count; i++)
+            for (int i = 1; i < sfp1.Fullpath.Count; i++)
             {
                 try
                 {
-                    string pathtowrite = directorytocreate + "\\" + songslistbox.Items[i].ToString();
-                    File.Copy(cdsongs[i], pathtowrite);
+                    //pathtowrite = cbdrives.SelectedItem + sfp1.cdname[i] + "\\" + sfp1.Fullpath[i];
+                    pathtowrite = cbdrives.SelectedItem + sfp1.cdname[i] + "\\" + Path.GetFileName(sfp1.Fullpath[i]);
+                    //string pathtowrite = directorytocreate + "\\" + songslistbox.Items[i].ToString();
+                    File.Copy(sfp1.Fullpath[i], pathtowrite);
                     progressBar1.PerformStep();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: Could not write file on disk. Original error: " + ex.Message);
+                }
+                if (i == sfp1.Fullpath.Count-1)
+                {
+                    MessageBox.Show("writing completed");
                 }
             }
             progressBar1.Value = 1;
